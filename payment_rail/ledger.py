@@ -1,8 +1,7 @@
 import hashlib
 import time
-from typing import NamedTuple
+from typing import NamedTuple, List
 from .guardrail import SettlementRequest
-
 
 class LedgerBlock(NamedTuple):
     block_index: int
@@ -12,10 +11,15 @@ class LedgerBlock(NamedTuple):
     timestamp: int
     block_hash: str
 
-
 class PrivateLedgerEngine:
+    """
+    Append-only private ledger that settles transactions using single-use S_token
+    references without storing persistent customer account credentials.
+    """
+
     def __init__(self):
-        self.chain: list[LedgerBlock] = []
+        self.chain: List[LedgerBlock] = []
+        self.processed_tokens: set = set()
         self._create_genesis_block()
 
     def _create_genesis_block(self):
@@ -25,11 +29,15 @@ class PrivateLedgerEngine:
             s_token="0000000000000000",
             amount_units=0,
             timestamp=1700000000,
-            block_hash="GENESIS_BLOCK_HASH"
+            block_hash="GENESIS_BLOCK_HASH_" + "0" * 46
         )
         self.chain.append(genesis)
 
-    def Commit_Settlement(self, request: SettlementRequest) -> LedgerBlock:
+    def commit_settlement(self, request: SettlementRequest) -> LedgerBlock:
+        # Prevent replay attacks using token deduplication
+        if request.token in self.processed_tokens:
+            raise ValueError("Token sequence has already been executed on ledger.")
+
         prev_block = self.chain[-1]
         new_index = prev_block.block_index + 1
         current_time = int(time.time())
@@ -45,5 +53,7 @@ class PrivateLedgerEngine:
             timestamp=current_time,
             block_hash=block_hash
         )
+
         self.chain.append(new_block)
+        self.processed_tokens.add(request.token)
         return new_block

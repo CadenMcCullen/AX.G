@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: restrict-ledger-ingress
+  namespace: payment-rail-prod
+spec:
+  podSelector:
+    matchLabels:
+      app: ledger-node
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: gateway-api
+    ports:
+    - protocol: TCP
+      port: 50051
