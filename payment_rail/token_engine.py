@@ -4,10 +4,12 @@ import hashlib
 import gc
 from typing import NamedTuple
 
+
 class TokenizedPayload(NamedTuple):
     ephemeral_token: str  # Single-use numerical sequence placeholder (S_token)
     sequence_nonce: str   # Single-use deterministic reference
     timestamp_utc: int    # Unix timestamp
+
 
 class EphemeralTokenEngine:
     """

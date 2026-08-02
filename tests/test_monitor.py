@@ -1,6 +1,7 @@
 import json
 from payment_rail.monitor import NISTGovernanceMonitor
 
+
 def test_nist_governance_monitor_logging(capsys):
     monitor = NISTGovernanceMonitor()
 

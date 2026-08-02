@@ -1,6 +1,7 @@
 import time
 from payment_rail.token_engine import EphemeralTokenEngine
 
+
 def test_token_engine_generates_valid_16_digit_token():
     engine = EphemeralTokenEngine(ledger_secret_key=b"test_secret_key_123")
     raw_sequence = "4111111111111111"

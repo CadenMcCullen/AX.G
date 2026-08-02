@@ -3,6 +3,7 @@ import time
 from typing import NamedTuple
 from .guardrail import SettlementRequest
 
+
 class LedgerBlock(NamedTuple):
     block_index: int
     prev_hash: str
@@ -10,6 +11,7 @@ class LedgerBlock(NamedTuple):
     amount_units: int
     timestamp: int
     block_hash: str
+
 
 class PrivateLedgerEngine:
     def __init__(self):

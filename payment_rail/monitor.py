@@ -1,5 +1,6 @@
 import json
 
+
 class NISTGovernanceMonitor:
     def __init__(self):
         self.processed_count = 0

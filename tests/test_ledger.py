@@ -1,5 +1,6 @@
-from payment_rail.ledger import PrivateLedgerEngine, LedgerBlock
+from payment_rail.ledger import PrivateLedgerEngine
 from payment_rail.guardrail import SettlementRequest
+
 
 def test_ledger_initialization_with_genesis():
     ledger = PrivateLedgerEngine()
@@ -10,6 +11,7 @@ def test_ledger_initialization_with_genesis():
     assert genesis.s_token == "0000000000000000"
     assert genesis.amount_units == 0
     assert genesis.block_hash == "GENESIS_BLOCK_HASH"
+
 
 def test_ledger_commit_settlement():
     ledger = PrivateLedgerEngine()
