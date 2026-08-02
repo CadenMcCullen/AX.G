@@ -108,17 +108,17 @@ payment-rail-monorepo/
 │   │   ├── ci-pipeline.yml            # Automated testing, SAST, SBOM generation
 │   │   ├── secret-scanner.yml         # TruffleHog / GitGuardian automated scanning
 │   │   └── zero-pii-audit.yml         # Static analysis inspecting for unmasked logging
-│   └── CODEOWNERS                     # Restricted access rules for /packages/crypto-core
+│   └── CODEOWNERS                     # Restricted access rules for /packages/crypto_core
 ├── apps/
-│   ├── gateway-api/                   # Public ingress API (Rate limiting, schema decoding)
-│   ├── token-engine/                  # Isolated microservice for ephemeral tokenization
-│   ├── ledger-node/                   # Private permissioned ledger settlement engine
-│   └── monitor-service/               # NIST AI RMF Telemetry Aggregator (Zero-PII)
+│   ├── gateway_api/                   # Public ingress API (Rate limiting, schema decoding)
+│   ├── token_engine/                  # Isolated microservice for ephemeral tokenization
+│   ├── ledger_node/                   # Private permissioned ledger settlement engine
+│   └── monitor_service/               # NIST AI RMF Telemetry Aggregator (Zero-PII)
 ├── packages/
-│   ├── crypto-core/                   # Ephemeral HMAC/Cryptographic primitives (Isolated)
-│   ├── guardrail-middleware/          # Non-adversarial schema validators & output sanitizers
-│   ├── ledger-types/                  # Shared immutable data models and block definitions
-│   └── zkp-identity/                  # Zero-Knowledge Proof verification contracts
+│   ├── crypto_core/                   # Ephemeral HMAC/Cryptographic primitives (Isolated)
+│   ├── guardrail_middleware/          # Non-adversarial schema validators & output sanitizers
+│   ├── ledger_types/                  # Shared immutable data models and block definitions
+│   └── zkp_identity/                  # Zero-Knowledge Proof verification contracts
 ├── infra/
 │   ├── terraform/                     # Infrastructure-as-Code (AWS/GCP/Bare-Metal)
 │   └── k8s/                           # Kubernetes manifests (NetworkPolicies, ServiceAccounts)

@@ -27,7 +27,7 @@ Building and deploying the platform to institutional specifications requires ini
 
 | Phase / Module                                  | Estimated Cost (USD)        | Cost Drivers & Scope                                                                                                       |
 | :---------------------------------------------- | :-------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
-| **Core Architecture & Monorepo Engineering**    | $1,200,000 – $2,500,000     | Cryptographic primitives (`packages/crypto-core`), TEE enclave integration, private ledger node development, API gateways. |
+| **Core Architecture & Monorepo Engineering**    | $1,200,000 – $2,500,000     | Cryptographic primitives (`packages/crypto_core`), TEE enclave integration, private ledger node development, API gateways. |
 | **Independent Security & Cryptographic Audits** | $150,000 – $300,000         | Pen-testing, memory-dump inspection, formal verification of HMAC-SHA256 tokenization logic.                                |
 | **Legal Opinion & Regulatory Formalization**    | $75,000 – $150,000          | Formal Opinions of Counsel regarding 31 CFR § 1010.100 non-applicability, state-level licensing reviews.                   |
 | **Infrastructure & TEE Cloud Hosting (OPEX)**   | $50,000 – $200,000 / year   | AWS Nitro Enclaves / AMD SEV confidential compute nodes, private ledger bandwidth, HSM key management.                     |
@@ -48,7 +48,7 @@ $$ \text{Annual Enterprise Savings} = \Delta \text{PCI Audit Costs} + \Delta \te
 #### Monetization Framework
 
 - **Micro-Rail Transaction Fee Model:** Charging a flat processing fee (e.g., $0.03 – $0.08 per transaction) or a low basis-point rate (5 to 15 bps) significantly undercuts traditional credit card network swipe fees (150 to 300 bps) while maintaining high gross margins due to low private ledger overhead.
-- **Compliance-as-a-Service (CaaS):** Licensing the isolated tokenization engine (`apps/token-engine`) to enterprise merchants as an API integration.
+- **Compliance-as-a-Service (CaaS):** Licensing the isolated tokenization engine (`apps/token_engine`) to enterprise merchants as an API integration.
 
 #### IP Valuation Benchmark
 
