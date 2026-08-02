@@ -1,0 +1,16 @@
+name: Zero PII Audit
+
+on: [push, pull_request]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Audit Logging for Sensitive Variables
+        run: |
+          echo "Inspecting logging patterns to prevent PAN or PII leakage..."
+          # Real check ensuring nobody logs raw variables named 'pan', 'card', 'cvv' directly in logging commands
+          ! grep -rnE "logging\.(info|debug|warning|error)\(.*(pan|cvv|cardholder_name|ssn).*\)" apps/ packages/

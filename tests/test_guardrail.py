@@ -33,9 +33,9 @@ def test_settlement_request_validation_fails_on_invalid_token_pattern():
 
 def test_neutral_system_response():
     resp = NeutralSystemResponse(
-        status=ResponseStatus.SUCCESS,
+        status=ResponseStatus.SETTLEMENT_SUCCESSFUL,
         execution_reference="ref_123"
     )
-    assert resp.status == ResponseStatus.SUCCESS
+    assert resp.status == ResponseStatus.SETTLEMENT_SUCCESSFUL
     assert resp.execution_reference == "ref_123"
     assert "neutral utility specification" in resp.message

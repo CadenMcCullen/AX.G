@@ -1,0 +1,3 @@
+# Restrict sensitive cryptographic directories to security owners
+/packages/crypto-core/ @CadenMcCullen @security-lead
+/packages/zkp-identity/ @CadenMcCullen @security-lead
