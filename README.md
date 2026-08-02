@@ -1,4 +1,6 @@
 **AXIOM HIVE TECHNOLOGY**
+Authored / Designed by: Nicholas Michael Grossi, Caden McCullen
+August 2, 2026
 # README: Privacy-Preserving Tokenized Payment Rail & Settlement System
 
 ## Executive Overview
